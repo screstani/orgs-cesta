@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image, StyleSheet, Dimensions, Text, View } from 'react-native';
 
+import Texto from '../componentes/Texto';
+
 import topo from '../../assets/topo.png';
 import logo from '../../assets/logo.png';
 
@@ -9,18 +11,18 @@ const width = Dimensions.get('screen').width;
 export default function Cesta() {
   return <>
       <Image source={topo} style={estilos.topo} />
-      <Text style={estilos.titulo}>Detalhe da Cesta</Text>
+      <Texto style={estilos.titulo}>Detalhe da Cesta</Texto>
        {/* no caso de inverter essa ordem, a imagem sobreporia o título */}
 
         <View style={estilos.cesta}>
-            <Text style={estilos.nome}>Cesta de Verduras</Text>
+            <Texto style={estilos.nome}>Cesta de Verduras</Texto> 
             <View style={estilos.fazenda}>
                 <Image source={logo} style={estilos.imagemFazenda} />
-                <Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
+                <Texto style={estilos.nomeFazenda}>Jenny Jack Farm</Texto> 
             </View>
             
-            <Text style={estilos.descricao}>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha</Text>
-            <Text style={estilos.preco}>R$ 40,00</Text>
+            <Texto style={estilos.descricao}>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha</Texto>
+            <Texto style={estilos.preco}>R$ 40,00</Texto>
         </View>
   </>
 }
@@ -29,7 +31,6 @@ const estilos = StyleSheet.create({
     topo: {
         width: "100%", 
         height: 578 / 768 * width,
-        fontFamily: "MontserratRegular",
     },
     titulo: {
         width: "100%",
@@ -49,7 +50,7 @@ const estilos = StyleSheet.create({
         color: "#464646",
         fontSize: 26,
         lineHeight: 42,
-        fontFamily: "MontserratBold",
+        fontWeight: "bold",
     },
     fazenda: {
         flexDirection: "row",
@@ -63,7 +64,6 @@ const estilos = StyleSheet.create({
         fontSize: 16,
         lineHeight: 26,
         marginLeft: 12,
-        fontFamily: "MontserratRegular",
     },
     descricao: {
         color: "#A3A3A3",
