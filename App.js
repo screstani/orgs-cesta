@@ -1,8 +1,11 @@
 import React from 'react';
 import { StatusBar, SafeAreaView, View } from 'react-native';
 import { useFonts, Montserrat_400Regular, Montserrat_700Bold} from '@expo-google-fonts/montserrat';
+import AppLoading from 'expo-app-loading';
 
 import Cesta from './src/telas/Cesta';
+//aqui importamos sem {} pq o export default não precisa de {};
+import mock from './src/mocks/cesta';
 
 export default function App() {
   const [fonteCarregada] = useFonts({
@@ -11,13 +14,14 @@ export default function App() {
   });
 
   if(!fonteCarregada) {
-    return <View />
+    return <AppLoading />
   }
 
   return (
     <SafeAreaView>
       <StatusBar />
-      <Cesta />
+      {/* {...mock} é igual a fazermos topo={mock.topo} detalhes={mock.detalhes} */}
+      <Cesta {...mock} />
     </SafeAreaView>
   );
 }
