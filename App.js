@@ -18,7 +18,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1}}>
       <StatusBar />
       {/* {...mock} é igual a fazermos topo={mock.topo} detalhes={mock.detalhes} */}
       <Cesta {...mock} />
